@@ -1,0 +1,22 @@
+[project]
+name = "jmra-wp-mcp"
+version = "0.1.0"
+description = "MCP server for the JMRA DS研究会 第4期 working paper (LiNGAMによる統計的因果探索)"
+requires-python = ">=3.11"
+dependencies = ["mcp>=2,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+jmra-wp-mcp = "jmra_wp_mcp.server:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["jmra_wp_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

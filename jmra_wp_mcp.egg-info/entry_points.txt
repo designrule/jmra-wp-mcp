@@ -1,0 +1,2 @@
+[console_scripts]
+jmra-wp-mcp = jmra_wp_mcp.server:main

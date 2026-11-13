@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+jmra_wp_mcp/__init__.py
+jmra_wp_mcp/corpus.py
+jmra_wp_mcp/server.py
+jmra_wp_mcp.egg-info/PKG-INFO
+jmra_wp_mcp.egg-info/SOURCES.txt
+jmra_wp_mcp.egg-info/dependency_links.txt
+jmra_wp_mcp.egg-info/entry_points.txt
+jmra_wp_mcp.egg-info/requires.txt
+jmra_wp_mcp.egg-info/top_level.txt
+tests/test_corpus.py
+tests/test_server.py
