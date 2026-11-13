@@ -7,6 +7,7 @@ from pathlib import Path
 
 PAGE_MARK = re.compile(r"^===== PAGE (\d+) =====$", re.M)
 TOC_PAGES = range(2, 6)
+BODY_START = 6  # pages 1-5 are the cover and table of contents
 # "5.4 タイトル ....... 46"  /  "問題意識 ....... 5"
 TOC_ENTRY = re.compile(r"^(?:(\d{1,2})\.(\d{1,2})\s*)?(.*?)\s*\.{3,}\s*(\d{1,3})$")
 NUMBERED_HEADING = re.compile(r"^(\d{1,2})\.(\d{1,2})\s*(\S.*)$")
@@ -186,7 +187,7 @@ class Corpus:
         if not terms:
             return []
         hits: list[Hit] = []
-        for p in range(1, self.last_page + 1):
+        for p in range(BODY_START, self.last_page + 1):
             disp = re.sub(r"\s+", "", self.pages[p])
             text = disp.lower()
             if not all(t in text for t in terms):

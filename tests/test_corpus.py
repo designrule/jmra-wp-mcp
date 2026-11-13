@@ -137,3 +137,7 @@ def test_section_for_page_maps_to_innermost_section(corpus):
 def test_every_section_heading_is_found_on_its_start_page(corpus):
     missing = [s.id for s in corpus.sections if corpus._heading_line(s, s.start_page) is None]
     assert missing == []
+
+
+def test_search_skips_cover_and_toc_pages(corpus):
+    assert all(h.page > 5 for h in corpus.search("弱い操作変数"))
